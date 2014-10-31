@@ -57,11 +57,15 @@ Enforced limitations
 TODO
 ====
 
-external dependencies!
+external dependencies (oh my!)
+------------------------------
+
 - do_string
 - make_grid
 
-unit tests:
+unit tests (someday!)
+---------------------
+
 - test lists of dictionaries
 - test multiline items
 - use parser on a stream
