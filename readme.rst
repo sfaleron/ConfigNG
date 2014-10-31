@@ -49,13 +49,10 @@ unless it's refetched at every call, or some explicit updating mechanism is incl
 Enforced limitations
 --------------------
 
-not a class interface. all customizations are global.
-
-requires Python 2.7
-
-three-space indents!
-
-no containers in containers
+- not a class interface. all customizations are global.
+- requires Python 2.7
+- three-space indents!
+- no containers in containers
 
 TODO
 ====
@@ -64,10 +61,10 @@ external dependencies!
 - do_string
 - make_grid
 
-unit tests
+unit tests:
 - test lists of dictionaries
 - test multiline items
 - use parser on a stream
 - added untyped items
 
-perhaps the parser could be generated automagically from some syntax definition
+The parser could be generated automagically from some syntax definition, maybe.
