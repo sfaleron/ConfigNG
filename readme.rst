@@ -4,6 +4,10 @@ ABOUT
 
 This "Next Generation" library is not intended to replace all the various configuration libraries out there, only mine. I had a very old module that I created way back in the 1.5 or 2.0 days, when the place to go for Python libraries was the old Vaults of Parnassus. There are many good choices now, but none of them seemed like the right fit for me, and certainly wouldn't work with my existing configurations. The old library had many deficiencies, and cried out for a thorough refactoring. I have finally answered this call.
 
+
+Notice
+------
+
 There may be some remarks that are not, as yet, well translated for a wider audience, being originally intended for my own reference. I am working through the package to remedy this. Sorry about the mess!
 
 
@@ -29,7 +33,7 @@ command
 validate/convert
 
 
-children are defined by a command, %dict or %odict. they maybe inline or
+children are defined by a command, %dict or %odict. they may be inline or
 external. an inline child begins with an open brace at the end of the line
 started by the dict or odict, and ends with a close brace on a line by itself.
 an externally defined child has a filename to load, as though included.
@@ -57,10 +61,10 @@ Enforced limitations
 TODO
 ====
 
-external dependencies (from my private library, oh my!)
+external dependencies (from *my private library,* oh my!)
 
-- do_string
-- make_grid
+- do_string()
+- make_grid()
 
 unit tests (someday!)
 
