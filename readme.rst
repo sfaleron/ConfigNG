@@ -57,14 +57,12 @@ Enforced limitations
 TODO
 ====
 
-external dependencies (oh my!)
-------------------------------
+external dependencies (from my private library, oh my!)
 
 - do_string
 - make_grid
 
 unit tests (someday!)
----------------------
 
 - test lists of dictionaries
 - test multiline items
