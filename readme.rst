@@ -33,7 +33,7 @@ command
 validate/convert
 
 
-children are defined by a command, %dict or %odict. they may be inline or
+children are defined by a command, ``%dict`` or ``%odict``. they may be inline or
 external. an inline child begins with an open brace at the end of the line
 started by the dict or odict, and ends with a close brace on a line by itself.
 an externally defined child has a filename to load, as though included.
@@ -74,3 +74,5 @@ unit tests (someday!)
 - added untyped items
 
 The parser could be generated automagically from some syntax definition, maybe.
+
+The API/programming reference is good, but some examples and maybe a tutorial are indicated.
