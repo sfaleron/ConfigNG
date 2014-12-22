@@ -2,7 +2,13 @@
 ABOUT
 =====
 
-This "Next Generation" library is not intended to replace all the various configuration libraries out there, only mine. I had a very old module that I created way back in the 1.5 or 2.0 days, when the place to go for Python libraries was the old Vaults of Parnassus. There are many good choices now, but none of them seemed like the right fit for me, and certainly wouldn't work with my existing configurations. The old library had many deficiencies, and cried out for a thorough refactoring. I have finally answered this call.
+This "Next Generation" library is not intended to replace the various
+configuration libraries out there, only mine. I had a very old module that
+I created way back in the 1.5 or 2.0 days, when the place to go for Python
+libraries was the old Vaults of Parnassus. There are many good choices now,
+but none of them seems like the right fit for me, and certainly wouldn't
+work with my existing configurations. My old module had many deficiencies,
+and cried out for a thorough refactoring. I have finally answered this call.
 
 
 Notice
@@ -34,9 +40,9 @@ validate/convert
 
 
 children are defined by a command, ``%dict`` or ``%odict``. they may be inline or
-external. an inline child begins with an open brace at the end of the line
-started by the dict or odict, and ends with a close brace on a line by itself.
-an externally defined child has a filename to load, as though included.
+external. an inline child begins with an open brace at the end of the line, and ends
+with a close brace on a line by itself. an externally defined child has a filename
+to load, as though included.
 
 
 Tips and Tricks
