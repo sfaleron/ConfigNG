@@ -1,7 +1,9 @@
 
 """All that is needed for common usage."""
 
-# set up the validators
-import validators
+from __future__ import absolute_import
 
-from parser import *
+# set up the validators (side effects)
+from . import validators
+
+from .parser import *

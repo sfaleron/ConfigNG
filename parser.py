@@ -1,11 +1,14 @@
 
 """Direct access is not intended; instead use the toplevel package."""
 
-from errors import *
+from __future__ import absolute_import
+from __future__ import print_function
 
-from configcont import ConfigCont
+from .errors import *
 
-from support import do_string
+from .configcont import ConfigCont
+
+from minisup import do_string
 
 import os.path as osp
 
@@ -46,10 +49,10 @@ def findfile(f, dirs):
       path = osp.join(i, f)
 
       if osp.exists( path ):
-         print osp.normpath(path)
+         print(osp.normpath(path))
          return path
 
-   print dirs
+   print(dirs)
    raise ConfigIOError('File "%s" not found in include directories!' % (f,))
 
 # python can be a little weird about nonscalar default function parameters
@@ -151,7 +154,7 @@ def config_recursable(file_, config, incdirs, fname='stream', n=0):
                   else:
                      config.add_item(key, whatis)
 
-               except ConfigTypeError, e:
+               except ConfigTypeError as e:
                   raise ConfigParserError('Unrecognized type "%s"' % (whatis,), n, fname)
 
             else:
@@ -169,7 +172,7 @@ def config_recursable(file_, config, incdirs, fname='stream', n=0):
                else:
                   config.add_to_container(key, val)
 
-      except ConfigBaseError, e:
+      except ConfigBaseError as e:
          raise ConfigParserError(e[0], n, fname)
 
    if file_ is not fd:
@@ -183,4 +186,4 @@ def config_recursable(file_, config, incdirs, fname='stream', n=0):
 __all__ = ('get_config', 'ConfigParserError')
 
 # cyclical imports, so it goes at the end
-from api import *
+from .api import *

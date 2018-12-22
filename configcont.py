@@ -1,8 +1,10 @@
 
-from types import *
-from types import validate, get_helper
+from __future__ import absolute_import
 
-from errors import *
+from .types import *
+from .types import validate, get_helper
+
+from .errors import *
 
 from collections import OrderedDict
 

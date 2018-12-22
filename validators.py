@@ -4,9 +4,22 @@
 # validators return the parsed/converted value on success, and raises
 # ConfigValueError otherwise.
 
-from errors import ConfigTypeError, ConfigValueError
+from __future__ import absolute_import
 
-from types import add_type
+from .errors import ConfigTypeError, ConfigValueError
+
+from .types import add_type
+
+try:
+   basestring
+except NameError:
+   basestring = str
+
+try:
+    intTypes  = (int, long)
+except NameError:
+    intTypes  = int
+
 
 def validate_string(s):
    """stringiness is obligatory"""
@@ -43,7 +56,7 @@ notdigit_r = re.compile('[^0-9]')
 def validate_integer(s):
    """digits and negative sign only. will not convert a decimal value!"""
 
-   if isinstance(s, (int, long)):
+   if isinstance(s, intTypes):
       return s
 
    if not isinstance(s, basestring):
@@ -59,7 +72,7 @@ def validate_integer(s):
    try:
       return (-1 if negate else 1) * int(s)
 
-   except ValueError, e:
+   except ValueError as e:
       raise ConfigValueError(e)
 
 
@@ -68,10 +81,10 @@ def validate_float(s):
    try:
       return float(s)
 
-   except TypeError, e:
+   except TypeError as e:
       raise ConfigTypeError(e)
 
-   except ValueError, e:
+   except ValueError as e:
       raise ConfigValueError(e)
 
 
@@ -154,7 +167,7 @@ add_type('epath',  validate_existing_path)
 add_type('dir',    validate_existing_dir)
 add_type('file',   validate_existing_file)
 
-from factories import *
+from .factories import *
 
 add_type('userport', Range('user tcp/ip port', 'nonpriviledged port numbers, 1024-65535', 1024, 65535))
 

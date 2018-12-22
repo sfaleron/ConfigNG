@@ -1,9 +1,22 @@
 
 """Validator factories"""
 
-from errors import ConfigTypeError, ConfigValueError
+from __future__ import absolute_import
 
-from validators import validate_integer
+from .errors import ConfigTypeError, ConfigValueError
+
+from .validators import validate_integer
+
+try:
+   basestring
+except NameError:
+   basestring = str
+
+try:
+    intTypes  = (int, long)
+except NameError:
+    intTypes  = int
+
 
 class Range(object):
    """Accepts integers between two values, inclusively.
@@ -12,7 +25,7 @@ class Range(object):
 
       self.__doc__ = desc
 
-      if not isinstance(n1, (int, long)) or not isinstance(n2, (int, long)):
+      if not isinstance(n1, intTypes) or not isinstance(n2, intTypes):
          raise ConfigTypeError('integers are required')
 
       if n2 < n1:
@@ -97,6 +110,6 @@ class PlatformMixer(object):
       else:
          return self.validator(l[int(sys.platform == 'win32')])
 
-from types import get_type, add_type
+from .types import get_type, add_type
 
 __all__ = ('Range', 'Choice', 'PlatformMixer', 'get_type', 'add_type')

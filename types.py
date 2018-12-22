@@ -1,9 +1,17 @@
 
 """Direct access is not intended; instead use the api module."""
 
-from errors import *
+from __future__ import absolute_import
+
+from .errors import *
 
 from collections import OrderedDict
+
+try:
+   basestring
+except NameError:
+   basestring = str
+
 
 # "l" is implicit
 containers = {}
